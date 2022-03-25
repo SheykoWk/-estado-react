@@ -1,5 +1,7 @@
 import './App.css';
 import { useState } from 'react';
+import Button from './components/Button'
+import Value from './components/Value';
 
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
     return
   }
   const maxLimit = () => {
-    if(count < 0){
+    if(count < 20){
       setCount(count + 1)
     } 
     return
@@ -22,9 +24,9 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {count}
-        <button onClick={maxLimit}>Aumentar</button>
-        <button onClick={minLimit}>Disminuir</button>
+        <Value value={count} />
+        <Button name='Aumentar' func={maxLimit}/>
+        <Button name='Disminuir' func={minLimit} />
       </header>
     </div>
   );
